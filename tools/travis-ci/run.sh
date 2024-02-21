@@ -398,7 +398,7 @@ if [ "${OPJ_CI_PERF_TESTS:-}" == "1" ]; then
     git checkout ${REF_VERSION}
     mkdir -p build
     cd build
-    cmake .. -DCMAKE_BUILD_TYPE=${OPJ_BUILD_CONFIGURATION}
+    cmake .. -DCMAKE_BUILD_TYPE=${OPJ_BUILD_CONFIGURATION} -DBUILD_STATIC_LIBS=ON -DBUILD_SHARED_LIBS=OFF
     make -j3
     cd ../..
     cd tests/performance
