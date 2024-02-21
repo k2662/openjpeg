@@ -120,6 +120,12 @@ jobs:
             OPJ_CI_INCLUDE_IF_DEPLOY: 1
             #OPJ_NONCOMMERCIAL: 1
 
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.3.1
+        with:
+          name: openjpeg
+          path: .
+
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
